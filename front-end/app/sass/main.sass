@@ -3,7 +3,7 @@
 @import libs
 
 ::placeholder
-	color: #666
+	color: $colorPlaceholder
 
 ::selection
 	background-color: $accent
@@ -21,42 +21,176 @@ body
 	min-width: 320px
 	position: relative
 	line-height: 1.65
-	font-family: 'Roboto', sans-serif
+	font-family: 'Montserrat'
 	overflow-x: hidden
 	color: $text
+	background-color: $colorBody
 
 // Custom Sass / Remove before use
 
 .container
-	max-width: 700px
-	padding:
-		right: $gutter/2
-		left: $gutter/2
-	margin:
-		left: auto
-		right: auto
+	max-width: 1440px
+	padding: 0 calc((1440px - 1275px) / 2)
+	margin: 0 auto
+//	border: 1px solid red
+//
+//div
+//	border: 1px dotted blue
 
-.img-responsive
-	display: block
-	max-width: 100%
-	height: auto
-
-.example-grid
+header
 	display: grid
-	grid-gap: $gutter
-	grid-template-columns: 1fr 1fr
-	grid-template-areas: "left right"
-	> div:first-child
-		grid-area: left
-	> div:last-child
-		grid-area: right
-	+media-breakpoint-down(xs)
-		display: block
-		> div
-			padding: $gutter/2 0
-	
-.example-img
-	width: 100%
+	grid-template-rows: 38px 164px 50px 550px
+	.header_info-contact
+		background-color: $text
+		color: $colorBody
+		a
+			color: $colorBody
+			text-decoration: none
+		svg
+			fill: $colorBody
+			margin-right: 5px
+		.container
+			display: grid
+			grid-template-columns: repeat(3, 1fr)
+			height: 100%
+			align-items: center
+			.header_contact-region
+				display: flex
+				height: 100%
+				label
+					height: 100%
+					align-content: center
+				select
+					height: 100%
+					background-color: transparent
+					color: $colorBody
+					appearance: none
+					border: none
+					text-align: center
+					option
+						background-color: $text
+						color: $colorBody
+			.header_contact-help,
+			.header_contact-telefon
+				display: flex
+				height: 100%
+				align-items: center
+			.header_contact-help
+				justify-content: center
+			.header_contact-telefon
+				justify-content: end
+	.header_info-search
+		a
+			color: $text
+		svg
+			fill: $text
+			margin-right: 5px
+		.container
+			height: 100%
+			display: grid
+			grid-template-columns: repeat(5, 1fr)
+			align-items: center
+			.info_search-search
+				grid-column: span 3
+				height: 100%
+				display: inline-flex
+				align-items: center
+				justify-content: center
+				input,
+				button
+					height: 30px
+				#search_search-input
+					width: 435px
+					border: none
+					font-size: 14px
+					font-weight: 300
+					padding-left: 10px
+					letter-spacing: 1px
+				#search_search-button
+					width: 150px
+					background-color: $accent
+					border: none
+					color: $colorWhite
+					font-size: 14px
+					font-weight: 400
+			.info_search-account
+				height: 100%
+				display: flex
+				align-items: center
+				justify-content: center
+			.info_search-cart
+				height: 100%
+				display: flex
+				align-items: center
+				justify-content: center
+	.header_nav
+		background-color: $colorMenu
+		height: 100%
+		.container
+			height: 100%
+			display: inline-flex
+			flex: 1
+			.header_nav-menu
+				padding: 0
+				margin: 0
+				list-style: none
+				li
+					padding: 0
+					margin: 0 -4px 0 0
+					white-space: nowrap
+					display: inline-block
+				a
+					display: block
+					width: 225px
+					color: $text
+					text-transform: uppercase
+					font-weight: 700
+					padding: 12px 70px
+					border-left: 1px solid $colorMenu
+					&:hover
+						color: $colorWhite
+						background-color: $accent
+						text-decoration: none
+				.active a
+					background-color: $accent
+					color: $colorWhite
+			//ul
+			//	height: 100%
+			//	display: flex
+			//	flex-direction: row
+			//	li
+			//		display: block
+			//		list-style: none
+			//		width: 225px
+			//		text-align: center
+			//		align-self: center
+			//		a
+			//			width: 100%
+			//			height: 100%
 
-.parent // Lazy Load Placeholder Generator: https://webdesign-master.ru/services/lazy/
-	background-image: url(data:image/gif;base64,R0lGODlhCgAIAIABAN3d3f///yH5BAEAAAEALAAAAAAKAAgAAAINjAOnyJv2oJOrVXrzKQA7)
+	.header_info-slider
+		margin: 40px 0
+		.container
+			display: grid
+			grid-template-columns: repeat(6, minmax(auto, 212px))
+			grid-template-rows: repeat(2, 212px)
+			grid-row-gap: 30px
+			.info_slider-img
+				grid-column: span 5
+				grid-row: span 2
+				//background-color: $accent
+			.info_slider-man
+				margin-bottom: 30px
+				margin-left: 30px
+				border: 1px solid $colorMenu
+
+
+
+
+//.img-responsive
+//	display: block
+//	max-width: 100%
+//	height: auto
+//
+//.parent // Lazy Load Placeholder Generator: https://webdesign-master.ru/services/lazy/
+//	background-image: url(data:image/gif;base64,R0lGODlhCgAIAIABAN3d3f///yH5BAEAAAEALAAAAAAKAAgAAAINjAOnyJv2oJOrVXrzKQA7)
