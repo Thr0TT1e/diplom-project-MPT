@@ -32,14 +32,11 @@ body
 	max-width: 1440px
 	padding: 0 calc((1440px - 1275px) / 2)
 	margin: 0 auto
-//	border: 1px solid red
-//
-//div
-//	border: 1px dotted blue
 
 header
 	display: grid
-	grid-template-rows: 38px 164px 50px 550px
+	grid-template-rows: 38px 164px 50px
+	margin-bottom: 40px
 	.header_info-contact
 		background-color: $text
 		color: $colorBody
@@ -54,6 +51,8 @@ header
 			grid-template-columns: repeat(3, 1fr)
 			height: 100%
 			align-items: center
+			a:hover
+				color: $accent
 			.header_contact-region
 				display: flex
 				height: 100%
@@ -106,6 +105,8 @@ header
 					font-weight: 300
 					padding-left: 10px
 					letter-spacing: 1px
+					background-color: hsla(0, 0, 77%, .10)
+					border: 1px solid hsla(0, 0, 0, .10)
 				#search_search-button
 					width: 150px
 					background-color: $accent
@@ -128,7 +129,7 @@ header
 		height: 100%
 		.container
 			height: 100%
-			display: inline-flex
+			display: flex
 			flex: 1
 			.header_nav-menu
 				padding: 0
@@ -154,36 +155,181 @@ header
 				.active a
 					background-color: $accent
 					color: $colorWhite
-			//ul
-			//	height: 100%
-			//	display: flex
-			//	flex-direction: row
-			//	li
-			//		display: block
-			//		list-style: none
-			//		width: 225px
-			//		text-align: center
-			//		align-self: center
-			//		a
-			//			width: 100%
-			//			height: 100%
 
-	.header_info-slider
-		margin: 40px 0
+main
+	display: grid
+	grid-template-rows: 550px
+	margin-bottom: 230px
+	.main_info-slider
 		.container
 			display: grid
-			grid-template-columns: repeat(6, minmax(auto, 212px))
-			grid-template-rows: repeat(2, 212px)
-			grid-row-gap: 30px
+			grid-template-columns: minmax(auto, 1032px) minmax(auto, 243px)
+			grid-template-rows: 460px
 			.info_slider-img
-				grid-column: span 5
-				grid-row: span 2
-				//background-color: $accent
-			.info_slider-man
-				margin-bottom: 30px
+				#slider_img-inner
+					img
+						width: 100%
+						height: auto
+			.info_slider-box
 				margin-left: 30px
+				text-transform: uppercase
+				font-size: 12px
+				.slider_man
+					font-size: 26px
+					font-weight: 900
+					margin-top: 30px
+				a
+					text-decoration: none
+			.info_slider-female,
+			.info_slider-man
+				width: 212px
+				height: 212px
 				border: 1px solid $colorMenu
+				background-repeat: no-repeat
+				background-position: 50% 50%
+				padding: 44px 15px
+				&:hover
+					border: 1px solid $accent
+					transform: scale(1.1)
+			.info_slider-man
+				color: #8AB2FF
+				background-image: url("../img/male.svg")
+			.info_slider-female
+				color: #FF93C7
+				margin-top: 30px
+				background-image: url("../img/female.svg")
+	.main_product
+		text-transform: uppercase
+		.container
+			display: grid
+			grid-template-columns: 1fr
+			grid-template-rows: auto auto
+			.main_product-header
+				h2
+					font-size: 38px
+					font-weight: 700
+				p
+					font-size: 20px
+					font-weight: 300
+			.main_product-card
+				display: grid
+				grid-template-columns: repeat(3, minmax(auto, 350px))
+				grid-template-rows: repeat(2, 550px)
+				grid-gap: 35px 113px
+				.product_card-item:nth-child(5)
+					grid-column: 2 / span 2
+					grid-row: 2 / 3
+					.img_title
+						color: white
+						position: absolute
+						text-align: center
+						font-size: 68px
+						font-weight: 700
+						top: 25%
+						left: 15%
+						span
+							font-size: 35px
+				.product_card-item:nth-child(4)
+					.card_item-img
+						background-color: #FF77bb
+					.img_title
+						position: absolute
+						color: #FF77bb
+						font-size: 60px
+						font-weight: 700
+						width: 170px
+						height: 170px
+						background-color: #fff
+						border-radius: 50%
+						display: flex
+						align-items: center
+						justify-content: center
+						top: 25.5%
+						left: 27%
+				.product_card-item
+					position: relative
+					.card_item-title
+						margin-top: 40px
+						font-size: 26px
+						font-weight: 700
+						text-align: center
+						a
+							text-decoration: none
+							color: $text
+					.card_item-desc
+						font-size: 14px
+						font-weight: 300
+						text-align: center
+					.promo
+						width: 155px
+						position: absolute
+						top: 0
+						padding: 15px
+						color: $colorWhite
+						font-size: 12px
+						font-weight: 400
+						text-align: center
+					.promo1
+						background-color: #8AB2FF
+					.promo2
+						background-color: #FF77bb
 
+footer
+	background-color: $accent
+	background-image: url("../img/footer_bg.svg")
+	background-repeat: no-repeat
+	background-position: 50% -1px
+	color: $colorWhite
+	.container
+		padding-top: 150px
+		display: grid
+		grid-template-columns: 1fr
+		grid-template-rows: repeat(2, auto)
+		.footer_nav
+			display: grid
+			grid-template-columns: repeat(5, 1fr)
+			text-transform: uppercase
+			margin-top: 30px
+			a
+				color: $colorWhite
+				text-decoration: none
+			.footer_nav-title
+				font-size: 20px
+				font-weight: 700
+				margin-bottom: 30px
+			.footer_nav-item
+				font-size: 16px
+				font-weight: 400
+				margin-bottom: 20px
+			.footer_nav-subscribe
+				grid-column: 4 / span 2
+				.footer_nav-form
+					display: inline-flex
+					width: 100%
+					margin-bottom: 90px
+					margin-top: 20px
+					input,
+					button
+						height: 30px
+						color: $accent
+					input
+						border: none
+						width: 70%
+						padding: 0 10px
+						&::placeholder
+							color: $accent
+					button
+						width: 30%
+						background-color: $colorWhite
+						border: none
+						border-left: 1px solid $accent
+				.footer_nav-title:not(:last-child)
+					margin-bottom: 10px
+		.footer_copyright
+			display: flex
+			justify-content: center
+			margin-top: 50px
+			margin-bottom: 10px
 
 
 
