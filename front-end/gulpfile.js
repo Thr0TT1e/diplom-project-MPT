@@ -22,7 +22,7 @@ gulp.task('browser-sync', function() {
 		// tunnel: true, tunnel: 'projectname', // Demonstration page: http://projectname.localtunnel.me
 	})
 });
-function bsReload(done) { browserSync.reload(); done() };
+function bsReload(done) { browserSync.reload(); done() }
 
 // Custom Styles
 gulp.task('styles', function() {
@@ -69,7 +69,7 @@ gulp.task('img-responsive-1x', async function() {
 });
 // Produce @2x images
 gulp.task('img-responsive-2x', async function() {
-	return gulp.src('app/img/_src/**/*.{png,jpg,jpeg,webp,raw}')
+	return gulp.src(['app/img/_src/**/*.{png,jpg,jpeg,webp,raw}'])
 		.pipe(newer('app/img/@2x'))
 		.pipe(responsive({
 			'**/*': { width: '100%', quality: quality }
@@ -114,3 +114,5 @@ gulp.task('watch', function() {
 });
 
 gulp.task('default', gulp.parallel('img', 'styles', 'scripts', 'browser-sync', 'watch'));
+
+gulp.task('build', gulp.parallel('prebuild', 'clean', 'img', 'styles', 'scripts'));
