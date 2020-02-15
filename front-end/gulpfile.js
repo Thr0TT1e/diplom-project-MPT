@@ -55,7 +55,7 @@ gulp.task('scripts', function() {
 });
 
 // Responsive Images
-var quality = 95; // Responsive images quality
+const quality = 95; // Responsive images quality
 
 // Produce @1x images
 gulp.task('img-responsive-1x', async function() {
@@ -90,6 +90,10 @@ gulp.task('code', function() {
 	.pipe(browserSync.reload({ stream: true }))
 });
 
+gulp.task('clean', async function() {
+	return del.sync('dist');
+});
+
 // Deploy
 gulp.task('rsync', function() {
 	return gulp.src('app/')
@@ -106,6 +110,22 @@ gulp.task('rsync', function() {
 	}))
 });
 
+gulp.task('prebuild', async function() {
+	let buildCss = gulp.src(
+		'app/css/**/*'
+	)
+		.pipe(gulp.dest('dist/css'));
+
+	let buildFonts = gulp.src('app/fonts/**/*')
+		.pipe(gulp.dest('dist/fonts'));
+
+	let buildJs = gulp.src('app/js/**/*')
+		.pipe(gulp.dest('dist/js'));
+
+	let buildHtml = gulp.src('app/*.html')
+		.pipe(gulp.dest('dist'));
+});
+
 gulp.task('watch', function() {
 	gulp.watch('app/sass/**/*.sass', gulp.parallel('styles'));
 	gulp.watch(['app/js/_custom.js', 'app/js/_libs.js'], gulp.parallel('scripts'));
@@ -115,4 +135,4 @@ gulp.task('watch', function() {
 
 gulp.task('default', gulp.parallel('img', 'styles', 'scripts', 'browser-sync', 'watch'));
 
-gulp.task('build', gulp.parallel('prebuild', 'clean', 'img', 'styles', 'scripts'));
+gulp.task('build', gulp.parallel('prebuild', 'clean', 'img-responsive-1x', 'img-responsive-2x', 'styles', 'scripts'));
