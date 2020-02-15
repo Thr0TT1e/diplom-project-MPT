@@ -1,6 +1,6 @@
-// Lazy loading img & background images using intersection observer
+// Lazy loading images & background images using intersection observer
 // Reference: https://developers.google.com/web/fundamentals/performance/lazy-loading-guidance/images-and-video/
-// Using example: <img class="lazy" src="thumb.gif" data-src="real-img.jpg" data-srcset="real-img@1x.jpg 1x, real-img@2x.jpg 2x">
+// Using example: <images class="lazy" src="thumb.gif" data-src="real-images.jpg" data-srcset="real-images@1x.jpg 1x, real-images@2x.jpg 2x">
 // Background image class usign example: <div class="lazy-background"> with added class ".visible" for styling
 // Background image style attribute lazy loading example: <div data-bg="image.jpg">
 
@@ -8,7 +8,7 @@
 
 document.addEventListener('DOMContentLoaded', function() {
 
-	var lazyImages = [].slice.call(document.querySelectorAll('img.lazy'));
+	var lazyImages = [].slice.call(document.querySelectorAll('images.lazy'));
 	var lazyBackgrounds = [].slice.call(document.querySelectorAll('.lazy-background'));
 	var lazyBackgroundsData = [].slice.call(document.querySelectorAll('[data-bg]'));
 
