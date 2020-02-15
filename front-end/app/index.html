@@ -6,7 +6,6 @@
     <meta name="description" content="Дипломный проект (часть Front-End)">
     <meta name="viewport" content="width=device-width">
     <link rel="icon" href="images/favicon.png">
-    <!--	<meta property="og:image" content="images/@1x/preview.jpg">-->
     <link rel="stylesheet" href="css/jquery.fancybox.min.css" type="text/css">
     <link rel="stylesheet" href="css/slick-theme.css" type="text/css">
     <link rel="stylesheet" href="css/slick.css" type="text/css">
@@ -60,7 +59,37 @@
                     </svg>
                 </div>
                 <div class="info_account-title">
-                    <a href="#">Личный кабинет</a>
+                    <a data-fancybox data-src="#info_account-modal" href="javascript:;">Личный кабинет</a>
+                </div>
+                <div id="info_account-modal" style="display: none;">
+                    <div class="modal_container">
+                        <div class="account_modal-authorization">
+                            <div class="account_modal-title">
+                                Вход в личный кабинет
+                            </div>
+                            <div class="account_modal-form">
+                                <div class="modal_form-login">
+                                    <input type="text" placeholder="E-mail">
+                                    <input type="password" placeholder="Пароль">
+                                    <button>Войти в личный кабинет</button>
+                                </div>
+                                <div class="modal_form-password">
+                                    <button>Забыли пароль?</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="account_modal-registration">
+                            <div class="modal_reg-title">
+                                Создайте свой аккаунт
+                            </div>
+                            <div class="model_reg-img">
+                                <img src="images/dress.svg" alt="">
+                            </div>
+                            <div class="modal_reg-btn">
+                                <button>Создать аккаунт</button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="info_search-cart">
@@ -223,7 +252,7 @@
                 </div>
             </div>
         </div>
-        <div class="footer_copyright">2020 © Название интернет магазина - интернет-магазин</div>
+        <div class="footer_copyright">2020 © НоваКидс - интернет-магазин</div>
     </div>
 </footer>
 

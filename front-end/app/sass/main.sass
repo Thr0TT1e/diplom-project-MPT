@@ -329,7 +329,69 @@ footer
 			margin-top: 50px
 			margin-bottom: 10px
 
-
+#info_account-modal
+	//width: 800px
+	//height: 500px
+	.modal_container
+		display: grid
+		grid-template-columns: repeat(2, 1fr)
+		width: 800px
+		height: 500px
+		font-family: 'Montserrat'
+		.account_modal-authorization
+			display: grid
+			grid-template-rows: 100px 300px
+			align-items: center
+			.account_modal-title
+				font-size: 22px
+				font-weight: 700
+				text-transform: uppercase
+				text-align: center
+			.account_modal-form
+				display: grid
+				grid-template-rows: auto auto
+				justify-items: center
+				.modal_form-login
+					display: grid
+					justify-self: center
+					input,
+					button
+						width: 300px
+						height: 38px
+						margin-bottom: 30px
+					input
+						border: 1px solid $accent
+						padding: 0 15px
+					button
+						border: none
+						background-color: $accent
+						color: $colorWhite
+						font-family: 'Montserrat'
+				.modal_form-password
+					margin-top: 30px
+					button
+						width: 300px
+						height: 38px
+						color: $accent
+						background-color: transparent
+						border: none
+						&:hover
+							background-color: $accent
+							color: $colorWhite
+		.account_modal-registration
+			display: grid
+			background-color: $accent
+			justify-items: center
+			.modal_reg-title
+				margin-top: 30px
+				font-size: 20px
+				color: $colorWhite
+			button
+				background-color: none
+				border: none
+				color: $accent
+				width: 250px
+				height: 38px
 
 //.images-responsive
 //	display: block
