@@ -696,3 +696,6 @@ front-end/node_modules/yargs-parser/
 front-end/node_modules/yargs/
 front-end/node_modules/yeast/
 front-end/package-lock.json
+*.pyc
+*~
+__pycache__

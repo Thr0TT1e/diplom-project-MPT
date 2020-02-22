@@ -24,12 +24,12 @@ class CardProduct(models.Model):
 		('М', 'Мальчик'),
 		('Д', 'Девочка'),
 	]
-	title = models.CharField(max_length=200)
-	description = models.TextField()
-	price = models.IntegerField()
-	gender = models.CharField(max_length=2, choices=GENDER)
-	image = models.ImageField(upload_to='%Y/%m/%d/')
-	size = models.CharField(max_length=2, choices=SHIRT_SIZES)
+	title = models.CharField(max_length=200, verbose_name='Наименование товара')
+	description = models.TextField(verbose_name='Описание товара')
+	price = models.IntegerField(verbose_name='Цена товара')
+	gender = models.CharField(max_length=2, choices=GENDER, verbose_name='Пол ребёнка')
+	image = models.ImageField(upload_to='%Y/%m/%d/', verbose_name='Фото товара')
+	size = models.CharField(max_length=2, choices=SHIRT_SIZES, verbose_name='Размер')
 	date_publish = models.DateField(auto_now_add=True)
 
 	class Meta:
