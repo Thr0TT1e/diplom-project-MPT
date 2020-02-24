@@ -93,26 +93,6 @@ function startwatch() {
 	watch(['app/**/*.{' + fileswatch + '}']).on('change', browserSync.reload);
 }
 
-// function prebuild() {
-// 	let buildCss = gulp.src(
-// 		'app/css/**/*'
-// 	)
-// 		.pipe(gulp.dest('dist/css'))
-//
-// 	let buildFonts = gulp.src('app/fonts/**/*')
-// 		.pipe(gulp.dest('dist/fonts'))
-//
-// 	let buildJs = gulp.src('app/js/**/*')
-// 		.pipe(gulp.dest('dist/js'))
-//
-// 	let buildHtml = gulp.src('app/*.html')
-// 		.pipe(gulp.dest('dist'));
-// }
-//
-// function build() {
-//
-// }
-
 exports.browsersync = browsersync;
 exports.assets      = series(cleanimg, styles, scripts, images);
 exports.styles      = styles;
@@ -121,5 +101,3 @@ exports.images      = images;
 exports.cleanimg    = cleanimg;
 exports.deploy      = deploy;
 exports.default     = parallel(images, styles, scripts, browsersync, startwatch);
-
-gulp.task('build', gulp.parallel('prebuild', 'clean', 'img', 'styles', 'scripts'));

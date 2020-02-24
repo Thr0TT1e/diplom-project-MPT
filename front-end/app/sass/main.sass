@@ -393,6 +393,34 @@ footer
 				width: 250px
 				height: 38px
 
+
+// Страница личного кабинета
+
+main
+	.container
+		.LKmain_account
+			display: grid
+			grid-template-rows: repeat(2, auto)
+			.LKmain_account-header
+				display: grid
+				grid-template-columns: 100px 1fr 1fr
+				align-items: center
+				.LKaccount_header-title
+					font-size: 38px
+					font-weight: 900
+				.LKaccount_header-logout
+					a
+						font-size: 20px
+						color: $text
+			.LKmain_account-nav
+				display: grid
+				grid-template-columns: repeat(auto-fill, 50%)
+
+
+
+
+
+
 //.images-responsive
 //	display: block
 //	max-width: 100%
