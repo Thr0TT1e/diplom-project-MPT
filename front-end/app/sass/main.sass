@@ -394,7 +394,7 @@ footer
 				height: 38px
 
 
-// Страница личного кабинета
+// Страница личного кабинета (Ваши контактные данные)
 
 main
 	.container
@@ -405,16 +405,43 @@ main
 				display: grid
 				grid-template-columns: 100px 1fr 1fr
 				align-items: center
+				margin-bottom: 30px
 				.LKaccount_header-title
 					font-size: 38px
 					font-weight: 900
 				.LKaccount_header-logout
+					text-align: right
 					a
 						font-size: 20px
 						color: $text
 			.LKmain_account-nav
 				display: grid
-				grid-template-columns: repeat(auto-fill, 50%)
+				grid-template-columns: repeat(auto-fill, 450px)
+				margin-bottom: 30px
+				a
+					color: $text
+					font-size: 20px
+				.LKactive
+					font-weight: 700
+				//.LKaccount_nav-orders
+				//	margin-left: 50px
+		.LKmain_account-data
+			display: grid
+			grid-template-columns: repeat(auto-fill, 380px)
+			.LKaccount_data-column
+				display: grid
+				color: lighten($text, 50%)
+				align-items: end
+				font-size: 16px
+				.LKaccount_data-name
+					display: flex
+					height: 55px
+					align-items: end
+				span, a
+					color: lighten($text, 20%)
+				a
+					text-decoration: underline
+
 
 
 
