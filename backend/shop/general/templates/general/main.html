@@ -1,0 +1,100 @@
+{% extends "general/base.html" %}
+
+{% block content %}
+    <div class="main_info-slider">
+        <div class="container">
+            <div class="info_slider-img">
+                <div id="slider_img-inner">
+                    <img src="{% static 'novakids/images/src/slider1.png' %}" alt="Слайдер">
+                    <img src="{% static 'novakids/images/src/slider1.png' %}" alt="Слайдер">
+                    <img src="{% static 'novakids/images/src/slider1.png' %}" alt="Слайдер">
+                </div>
+            </div>
+            <div class="info_slider-box">
+                <a href="#">
+                    <div class="info_slider-man">
+                        Товары для<br><span class="slider_man man">Мальчиков</span>
+                    </div>
+                </a>
+                <a href="#">
+                    <div class="info_slider-female">
+                        Товары для<br><span class="slider_man female">Девочек</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="main_product">
+        <div class="container">
+            <div class="main_product-header">
+                <h2>Актуальное</h2>
+                <p>Новые коллекции, акции и подборка по тематике</p>
+            </div>
+            <div class="main_product-card">
+                <div class="product_card-item">
+                    <div class="card_item-img">
+                        <a href="#">
+                            <img src="{% static 'novakids/images/src/school_card.png' %}" alt="Все для школы">
+                        </a>
+                        <div class="promo promo1">Новая коллекция</div>
+                    </div>
+                    <div class="card_item-title">
+                        <a href="#">Все для школы</a>
+                    </div>
+                    <div class="card_item-desc">Новые детские коллекции</div>
+                </div>
+                <div class="product_card-item">
+                    <div class="card_item-img">
+                        <a href="#">
+                            <img src="{% static 'novakids/images/src/trend_card.png' %}" alt="Это в тренде">
+                        </a>
+                        <div class="promo promo2">Это в тренде</div>
+                    </div>
+                    <div class="card_item-title">
+                        <a href="#">Это в тренде</a>
+                    </div>
+                    <div class="card_item-desc">Аксессуары и сумки</div>
+                </div>
+                <div class="product_card-item">
+                    <div class="card_item-img">
+                        <a href="#">
+                            <img src="{% static 'novakids/images/src/shoose_card.png' %}" alt="Обувь">
+                        </a>
+                        <div class="promo"></div>
+                    </div>
+                    <div class="card_item-title">
+                        <a href="#">Обувь</a>
+                    </div>
+                    <div class="card_item-desc">Для всех дней недели</div>
+                </div>
+                <div class="product_card-item">
+                    <div class="card_item-img">
+                        <a href="#">
+                            <img src="{% static 'novakids/images/src/sale_card.png' %}" alt="Получите скидку">
+                        </a>
+                        <div class="promo"></div>
+                        <div class="img_title">25%</div>
+                    </div>
+                    <div class="card_item-title">
+                        <a href="#">Получите скидку</a>
+                    </div>
+                    <div class="card_item-desc">при заказе от 3 000 рублей</div>
+                </div>
+                <div class="product_card-item item5">
+                    <div class="card_item-img">
+                        <a href="#">
+                            <img src="{% static 'novakids/images/src/summer_sale_card.png' %}"
+                                 alt="Летние скидки до 70%">
+                        </a>
+                        <div class="promo">Скидки до 70%</div>
+                        <div class="img_title">Летние скидки<br> <span>до</span> 70%</div>
+                    </div>
+                    <div class="card_item-title">
+                        <a href="#">Пришло время больших скидок</a>
+                    </div>
+                    <div class="card_item-desc">на модели прошлого и этого сезона</div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
