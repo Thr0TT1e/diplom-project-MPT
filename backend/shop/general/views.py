@@ -5,4 +5,5 @@ from .models import CardProduct
 
 
 def index(request):
+	# main_content =
 	return render(request, 'general/index.html', {})

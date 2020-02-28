@@ -11,6 +11,21 @@ class - ключевое слово для определения объекто
 from django.db import models
 from django.utils import timezone
 
+# Создаём объект, который определяет категорию товара
+
+
+class Category(models.Model):
+	name = models.CharField(max_length=60, db_index=True)  # Наименование категории
+	metka = models.SlugField(max_length=60, db_index=True)  # Создаём метку
+
+	class Meta:
+		ordering = ('name',)
+		verbose_name = 'Категория'
+		verbose_name_plural = 'Категории'
+
+	def __str__(self):
+		return self.name
+
 
 class CardProduct(models.Model):
 	SHIRT_SIZES = [
@@ -24,6 +39,7 @@ class CardProduct(models.Model):
 		('М', 'Мальчик'),
 		('Д', 'Девочка'),
 	]
+	category = models.ForeignKey(Category, related_name='products')
 	title = models.CharField(max_length=200, verbose_name='Наименование товара')
 	description = models.TextField(verbose_name='Описание товара')
 	price = models.IntegerField(verbose_name='Цена товара')
@@ -42,3 +58,5 @@ class CardProduct(models.Model):
 
 	def __str__(self):
 		return self.title
+
+
