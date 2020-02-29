@@ -122,6 +122,14 @@ header
 				display: flex
 				align-items: center
 				justify-content: center
+				.info_cart-count
+					margin-left: 5px
+					background-color: $accent
+					color: $colorWhite
+					font-size: 14px
+					font-weight: 700
+					padding: 1px 5px
+					border-radius: 50%
 	.header_nav
 		background-color: $colorMenu
 		height: 100%
@@ -164,6 +172,27 @@ main
 			grid-template-columns: minmax(auto, 1032px) minmax(auto, 243px)
 			grid-template-rows: 460px
 			.info_slider-img
+				.info_slider-text
+					position: relative
+					&::before
+						position: absolute
+						content: ''
+						top: 0
+						right: 0
+						bottom: 0
+						left: 0
+						background-color: $accent
+						z-index: 1
+						opacity: .62
+					p
+						position: absolute
+						z-index: 1
+						color: $colorWhite
+						font-size: 100px
+						font-weight: 700
+						text-transform: uppercase
+						line-height: 1.5
+						margin-left: 30px
 				#slider_img-inner
 					img
 						width: 100%
