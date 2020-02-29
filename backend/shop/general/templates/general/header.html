@@ -58,7 +58,9 @@
                                     <div class="modal_form-login">
                                         <input type="text" placeholder="E-mail">
                                         <input type="password" placeholder="Пароль">
-                                        <button>Войти в личный кабинет</button>
+                                        <a href="{% url 'lk_info' %}">
+                                            <button >Войти в личный кабинет</button>
+                                        </a>
                                     </div>
                                     <div class="modal_form-password">
                                         <button>Забыли пароль?</button>
@@ -96,7 +98,7 @@
             <div class="container">
                 <nav>
                     <ul class="header_nav-menu">
-                        <li class="active"><a href="#">Новинки</a></li>
+                        <li class="active"><a href="{% url 'index' %}">Новинки</a></li>
                         <li><a href="#">Одежда</a></li>
                         <li><a href="#">Обувь</a></li>
                     </ul>
